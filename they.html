@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+   .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px;
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg {
+        background-image: url('photo-home/they.jpg');
+        background-size: cover;
+        text-align: center;
+        padding: 500px 0;
+        color: white;
+    }
+
+    .new-text {
+        text-align: center; /* 文字置中對齊 */
+        color: #4b4b4b; /* 文字顏色為灰色 */
+        line-height: 40px; /* 調整行高 */
+        font-size: 15px; /* 調整字體大小 */
+        padding: 20px;
+    }
+
+    .separator {
+    border-top: 1px solid #ccc; /* 添加灰色分隔線 */
+    margin-top: 20px; /* 分隔線與上方元素的間距 */
+    margin-bottom: 20px; /* 分隔線與下方元素的間距 */
+    }
+
+    .text-box {
+        width: 40%;
+        background-color: #f0f0f0;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+
+    .text-box h3 {
+        color: #414141;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .team-section {
+        text-align: center;
+        background-image: url('your-image-path.jpg');
+        background-size: cover;
+        padding: 40px 0;
+    }
+
+    @media only screen and (max-width: 1000px) {
+    .horizontal-bg {
+        padding: 300px 0; /* 減少上下間距 */
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="right-side">
+            <div class="logo-container">
+                <img src="photo-home/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a href="index.html">溫島起緣</a></div>
+                <div class="menu-item"><a href="story.html">島語記事</a></div>
+                <div class="menu-item"><a href="about.html">溫的島語</a></div>
+                <div class="menu-item"><a href="they.html">相關機構</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 横式底圖及置中文字 -->
+    <div class="horizontal-bg">
+        <h2>相關機構 Special thanks</h2>
+    </div>
+
+    <div class="team-section">
+    <div class="wrapper">
+        <div class="text-box">
+        <h3> 我們這座島嶼，因為有你們，才得以成為 —— 溫島</h3></div>
+        <div class="new-text">
+        感謝這些無私奉獻的機構、團體、社工與志工，<br>
+        你們的付出為我們的土地灌注了溫暖的力量，<br>
+        讓每一處角落都散發著人情味，成就了這片美麗的福爾摩沙。
+        </div>
+    </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>
