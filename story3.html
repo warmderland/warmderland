@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+    .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px; /* 將高度設置為固定值 */
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg-container {
+    max-width: 100%; /* 最大寬度為螢幕寬度 */
+}
+
+.horizontal-bg {
+    background-image: url('story/story3.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 500px 0; /* 調整上下間距 */
+}
+
+.horizontal-bg p{
+    line-height: 30px;
+}
+
+/* 文章內文樣式 */
+.article-content {
+    max-width: 800px; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 20px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* 圖片與文字之間的間距 */
+}
+
+.article-content h3{
+    font-weight: bold;
+    font-size: 15pt;
+    color: #333333;
+}
+.article-content p{
+    line-height: 40px;
+    color: #4b4b4b;
+}
+
+.article-content2 {
+    max-width: 100%; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 80px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+    background-color: #f1f1f1;
+}
+
+.article-content2 h4{
+    font-size: 15pt;
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.article-content2 p{
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    color: #333333;
+}
+
+.button-container {
+    text-align: center; /* 让按钮在容器内水平居中 */
+}
+
+.button {
+    border: none;
+    background-color: #9b2f699a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none; /* 消除链接的底线 */
+    font-size: 10pt;
+}
+
+.button:hover {
+    background-color: #9B2F68;
+}
+
+    @media only screen and (max-width: 1000px) {
+        .horizontal-bg-container {
+        width: 100%; /* 調整容器寬度 */
+    }
+    .horizontal-bg {
+        padding: 100px 0; /* 調整上下間距 */
+        height: auto; /* 讓高度自動調整 */
+    }
+
+    .horizontal-bg h2{
+        font-size: 12pt;
+    }
+
+    .article-content2 h4{
+    font-size: 12pt;
+    }
+
+.article-content2 p{
+font-size: 10pt;
+    }
+
+    .article-content h3{
+    font-size: 12pt;
+    }
+
+.article-content p{
+font-size: 10pt;
+    }
+}
+   
+</style>
+</head>
+<body>
+    <div class="right-side">
+        <div class="logo-container">
+            <img src="photo-home/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="menu">
+            <div class="menu-item"><a href="index.html">溫島緣起</a></div>
+            <div class="menu-item"><a href="story.html">島語季刊</a></div>
+            <div class="menu-item"><a href="about.html">島民介紹</a></div>
+            <div class="menu-item"><a href="they.html">溫的夥伴</a></div>
+        </div>
+    </div>
+
+  <!-- 横式底圖及置中文字 -->
+  <div class="horizontal-bg">
+    <h2>住在手機裡的女兒</h2>
+
+</div> 
+
+
+<!-- 文章內文 -->
+<div class="article-content2">
+    <p><strong>2024年三月四號，星期六，在東協廣場。</strong><br>
+        一個對我們而言近似奇蹟的畫面在眼前上演，聽來或許煽情，但至今回想起那一幕，仍感慨萬千。在擬定封面、拍攝前，我們會大略在腦中構想畫面的模樣，怎樣指引受訪者拍攝，讓畫面呈現最佳的訊息傳遞效果；每次的拍攝都像一場賭注，需要靠老天賞飯吃。良好的光線、與主題契合的主角，一張好照片要能說故事，可遇不可求。
+    <br><br></p>
+    <p>在拍攝前，我們在日曆紙上，繪製了粗略的草圖。希望能拍攝出一張「想念遠在異國兒女的父母」照片，來表達外籍移工對家鄉兒女的思念。即使多數人對移工的認識不深，但對於他們酷愛在外視訊的特色應該很熟悉，我們想著，畫面裡應當要有手機、視訊的畫面，還要有小孩的身影。
+        <br><br></p>
+        <p>但茫茫人海中，該怎麼找到一個符合所有條件的對象?難道我們要直覺鎖定目標，請求他/她，並說:「嘿，請問你有小孩，剛好不在身邊，你可以跟他視訊，並讓我們拍一張照嗎?」說不定還高攀了賭注。
+        <br></p>
+    </div>
+
+    <div class="article-content">
+        <p>就這樣陷於自我懷疑，一名男子從我們身旁經過，正在講電話，他的手機殼背後是一張小女孩的相片。手持電話的異國男子，講著我們不了解的語言，手機背後女兒的照片，這個畫面一下就觸動了我們，因為他就是我們理想中的主角。就這樣，從月曆紙上躍出。
+            <br><br></p>
+        <p>他和他的妻子在一起，妻子說著一口流利的中文，她說手機殼背後的圖案是他的女兒，今年3歲，跟祖父母同住在越南，而他和妻子一同在台灣工作打拼。
+        <br><br></p>
+        <p>我們詢問他，有沒有機會為他拍張照，他很爽快的答應了，我們問，有沒有機會能夠與女兒一同視訊，我們想要為他和女兒拍攝一張「合照」。<br><br>
+            他笑了笑，是錯愕又得意的笑，錯愕來自這突如其來的請求；得意的是能夠讓我們看看他的寶貝女兒，他也很高興呀。
+            </p>
+        <img src="story/story3-1.JPG" alt="Image"></div>
+
+<div class="article-content2">
+        <p>他開啟了視訊，我們見到了照片上的那個小女孩，活蹦亂跳的身影出現在螢幕上，畫面上的女兒緊緊依偎在父親的臉頰旁，像在親吻一樣，看起來好近、但也好遠。<br><br>
+            <strong>我們看著父親望著女兒的神情，滿滿的愛、思念、自豪甚至是憐惜——至今仍難以忘懷。</strong><br><br>
+            請剛認識的受訪者為我們開啟視訊，這個任務看似魯莽，但顯著展示了一個問題：在這片島嶼上，到底有多少的父母親，與孩子分開，在異國打拼呢？  
+        <br><br></p>
+    <div class="button-container">
+        <a href="javascript:history.back()" class="button">返回上頁</a>
+    </div>
+</div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>

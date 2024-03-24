@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+    .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px; /* 將高度設置為固定值 */
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg-container {
+    max-width: 100%; /* 最大寬度為螢幕寬度 */
+}
+
+.horizontal-bg {
+    background-image: url('story/story9.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 500px 0; /* 調整上下間距 */
+}
+
+.horizontal-bg p{
+    line-height: 30px;
+}
+
+/* 文章內文樣式 */
+.article-content {
+    max-width: 800px; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 20px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* 圖片與文字之間的間距 */
+}
+
+.article-content h3{
+    font-weight: bold;
+    font-size: 15pt;
+    color: #333333;
+}
+.article-content p{
+    line-height: 40px;
+    color: #4b4b4b;
+}
+
+.article-content2 {
+    max-width: 100%; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 80px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+    background-color: #f1f1f1;
+}
+
+.article-content2 h4{
+    font-size: 15pt;
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.article-content2 p{
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    color: #333333;
+}
+
+.button-container {
+    text-align: center; /* 让按钮在容器内水平居中 */
+}
+
+.button {
+    border: none;
+    background-color: #9b2f699a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none; /* 消除链接的底线 */
+    font-size: 10pt;
+}
+
+.button:hover {
+    background-color: #9B2F68;
+}
+
+    @media only screen and (max-width: 1000px) {
+        .horizontal-bg-container {
+        width: 100%; /* 調整容器寬度 */
+    }
+    .horizontal-bg {
+        padding: 100px 0; /* 調整上下間距 */
+        height: auto; /* 讓高度自動調整 */
+    }
+
+    .horizontal-bg h2{
+        font-size: 12pt;
+    }
+
+    .article-content2 h4{
+    font-size: 12pt;
+    }
+
+.article-content2 p{
+font-size: 10pt;
+    }
+
+    .article-content h3{
+    font-size: 12pt;
+    }
+
+.article-content p{
+font-size: 10pt;
+    }
+}
+   
+</style>
+</head>
+<body>
+    <div class="right-side">
+        <div class="logo-container">
+            <img src="photo-home/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="menu">
+            <div class="menu-item"><a href="index.html">溫島緣起</a></div>
+            <div class="menu-item"><a href="story.html">島語季刊</a></div>
+            <div class="menu-item"><a href="about.html">島民介紹</a></div>
+            <div class="menu-item"><a href="they.html">溫的夥伴</a></div>
+        </div>
+    </div>
+
+  <!-- 横式底圖及置中文字 -->
+  <div class="horizontal-bg">
+    <h2>背後的她們</h2>
+    <p>「雖然備受個案的需要，但我們從來不會奢望被她們理解或感激。」
+        </p>
+</div> 
+
+
+<!-- 文章內文 -->
+<div class="article-content">
+    <h3><br><br>Q:為什麼會踏入社工領域，深為社工最重要的特質是什麼？</h3>
+    <p>黃社工表示，社工的領域很多種，還找不到適合自己的領域，所以進來試看看。此地方有時限規定，安置三個月，針對個案做評估，最多可安置六個月。
+        在這領域中「主動伸出願意幫助的那雙手」是最重要的特質，熱情的來源是「在個案身上看到自己被需要 」、「自己的存在是有價值」。        
+    <br><br></p>
+    <h3>Q:女性無家者通常因為什麼原因在街頭生活？</h3>
+    <p>在服務的個案中，大部分是有精神議題、憂鬱症、躁鬱症、失覺失調、家人通報後被趕出來，個案都會認為自己很正常，沒有病。這些個案的年齡層也不一定，年長的通常是因為挫折被詐騙。
+        大部分的女性無家者在街頭上生活的原因有精神議題、家暴、本身一人生活、工作問題並年紀稍長就業困難等等。        
+    <br><br></p>
+    <h3>Q:要怎麼與有精神議題的個案相處？</h3>
+    <p>某些個案可能會有攻擊型的部分，在當下交談過程中，也要提高敏感度，對談時要注意情緒，並拉開距離。
+        <br><br></p>
+    <img src="story/story9-1.JPG" alt="Image">
+    <h3>Q:街頭上的性騷擾、暴力行為很常見嗎？</h3>
+    <p>女性無家者被性騷擾的狀況是非常常見的，有些女性無家者會選擇與一名男無家者成一對，甚至用身體換取保護，身邊有一個男性的庇護有時對她們而言是種保障，好比遇到數個不友善的街友欺負來得好。
+        <br><br></p>
+    <h3>Q:曾經有在工作時，因個案感到懊悔或悲傷嗎？</h3>
+        <p>某些個案會讓我們感到很無助，有一位媽媽，腳行動不便，請她堅持每天來換藥就可以慢慢養傷好起來去找工作，但這位媽媽沒辦法忍受這些疼痛，社工都還沒放棄，個案卻先放棄了自己。「心有餘力不足」、「個案沒有伸手出來，我們再怎麼伸出手，也沒辦法抓到她，」但只能尊重她的決定。
+        <br><br></p>
+        <h3>Q:有成功回歸社會的個案嗎？</h3>
+        <p>當然也有成功在社會工作的案例，一位三十幾歲的女性，雖然有精神議題，但持續穩定用藥後加上本身能力底子好，後來擔任中國醫的廚助；也有五十幾歲的，雖然經歷了很多困難和面試，但最終也到了伴手禮店工作，且有認真學習的態度。<br><br></p>
+        <p>社工幫助無家者的就業的方向大多是清潔員、洗碗工，能力再好一點可能是保全。
+        <br><br></p>
+        <div class="button-container">
+            <a href="javascript:history.back()" class="button">返回上頁</a></div>
+       </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>

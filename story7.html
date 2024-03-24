@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+    .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px; /* 將高度設置為固定值 */
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg-container {
+    max-width: 100%; /* 最大寬度為螢幕寬度 */
+}
+
+.horizontal-bg {
+    background-image: url('story/story7.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 500px 0; /* 調整上下間距 */
+}
+
+.horizontal-bg p{
+    line-height: 30px;
+}
+
+/* 文章內文樣式 */
+.article-content {
+    max-width: 800px; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 20px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* 圖片與文字之間的間距 */
+}
+
+.article-content h3{
+    font-weight: bold;
+    font-size: 15pt;
+    color: #333333;
+}
+.article-content p{
+    line-height: 40px;
+    color: #4b4b4b;
+}
+
+.article-content2 {
+    max-width: 100%; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 80px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+    background-color: #f1f1f1;
+}
+
+.article-content2 h4{
+    font-size: 15pt;
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.article-content2 p{
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    color: #333333;
+}
+
+.button-container {
+    text-align: center; /* 让按钮在容器内水平居中 */
+}
+
+.button {
+    border: none;
+    background-color: #9b2f699a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none; /* 消除链接的底线 */
+    font-size: 10pt;
+}
+
+.button:hover {
+    background-color: #9B2F68;
+}
+
+    @media only screen and (max-width: 1000px) {
+        .horizontal-bg-container {
+        width: 100%; /* 調整容器寬度 */
+    }
+    .horizontal-bg {
+        padding: 100px 0; /* 調整上下間距 */
+        height: auto; /* 讓高度自動調整 */
+    }
+
+    .horizontal-bg h2{
+        font-size: 12pt;
+    }
+
+    .article-content2 h4{
+    font-size: 12pt;
+    }
+
+.article-content2 p{
+font-size: 10pt;
+    }
+
+    .article-content h3{
+    font-size: 12pt;
+    }
+
+.article-content p{
+font-size: 10pt;
+    }
+}
+   
+</style>
+</head>
+<body>
+    <div class="right-side">
+        <div class="logo-container">
+            <img src="photo-home/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="menu">
+            <div class="menu-item"><a href="index.html">溫島緣起</a></div>
+            <div class="menu-item"><a href="story.html">島語季刊</a></div>
+            <div class="menu-item"><a href="about.html">島民介紹</a></div>
+            <div class="menu-item"><a href="they.html">溫的夥伴</a></div>
+        </div>
+    </div>
+
+  <!-- 横式底圖及置中文字 -->
+  <div class="horizontal-bg">
+    <h2>沒辦法提供尊嚴的住所</h2>
+    <p>＊照片僅供示意，非當事人</p>
+
+</div> 
+
+
+<!-- 文章內文 -->
+<div class="article-content">
+    <p>阿姨名叫美惠，高雄人，過去在屏東讀護理，畢業後就沒有從事相關行業。結婚後她搬到臺北從事餐飲業，兩年前，老公因大腸癌去世，她唯一的兒子在大陸做生意，也沒能在身邊陪伴她。<br><br>
+        十二年前，正逢過年期間，兒子回鄉探親，然而在開車回家的路上，被後方大卡車剎車失靈衝撞身亡。車內四人包含孫子全數喪命。阿姨表示當下她已經近乎喪失活下去的希望，但還是苟延殘喘到了現在。經濟狀況不佳的她，來到台中後，她才決定尋求教會的幫忙。
+    <br><br></p>
+        <h3>欺騙</h3>
+        <p>阿姨在三十幾歲結識一位好姊妹，兩人無話不談，甚至會定期出遊旅行，丈夫過世後還有留下一筆遺產，而阿姨的朋友本身在做投資，就推薦阿姨加入她的投資行列。第一次花了幾十萬，第二次花了三十幾萬...就這樣漸漸投身進一串陷阱。
+            半年後獲利不少，阿姨就全全信任這位朋友了。之後卻完全斷了聯繫，也沒得到任何錢。
+            她逃跑了，後期阿姨曾在餐飲業工作了九個月，最後來到台中找工作，因為聽說這裡有較多的工作機會，目前生活困苦，又沒有錢找到住所，她輾轉到台中火車站，想要盡快找工作維持生計。            
+        <br><br></p>
+        <img src="story/story7-1.JPG" alt="Image">
+        <h3><strong>沒有什麼東西是永恆的——</strong></h3>
+        <p>在那人來人往的轉運站，沒有人應該要駐足，只有她們，彷彿就這麼被定住了，就連身上少數的家當，也沒能保住。<br>
+            在台中火車住了一個月，所有家當就不間斷地被社政人員清空過好幾次，環保社政機構執行嚴格，早上一起床就要把所有東西全收好靠在欄杆邊，人也一定要在物品旁，等工作人員來詢問東西是誰的，如果沒人答覆就會被沒收。有時甚至只是離開去了個廁所，想到這個，美惠阿姨覺得深受委屈。
+            <br><br></p>
+        <h3><strong>雖然我沒有學過手語，但還是看得懂...<br>「我都已經60了耶，還結過婚，怎麼有這種事？」</strong><br><br></h3>
+    </div>
+
+    <div class="article-content2">
+        <p>阿姨在說這段話的時候，聲音微微地顫抖，即使她的嘴角是揚起的，似乎試圖用玩笑和自嘲的方式來掩飾這件遭遇的恐怖之處。然而不管她幾歲了，都不該為受害者的身分感到羞愧。
+            <br></p>
+    </div>
+   <div class="article-content">
+    <p><br>那時我的隔壁鄰居是個啞巴，我平常完全沒有在跟他互動，形同陌生人，所以也沒覺得有什麼不對勁或危險的。直到有一天，他突然主動來找我。他彎下身，靠得好近好近，我都已經可以感受到他呼出的氣息，覺得很不舒服，但不知道他的意圖是什麼，而且他也不會說話。
+    <br><br></p>
+    <p>他身子傾下，拉了拉自己破舊衣服的領口，露出部分肌膚，我還是沒搞懂，他指了指領口內，露出了一張千元鈔票。
+        那時候他做了一個手勢，我應該會記一輩子，他將左手的食指塞入右手握拳的圈圈內。雖然我從來沒有學過手語，但還是看懂了他的意思——「給妳錢，讓我睡。」
+        <br><br></p>
+        <img src="story/story7-2.JPG" alt="Image">
+    <p>雖然當時我嚇到了，但還是成功拒絕他了，他看我好像不知趣就離開了，然而自那天起他的行為變得越來越古怪，即使他沒有直接對我做什麼，但我常看到他在我對面，用自己性器官摩擦柱子，彷彿故意給我看一樣。
+    <br><br></p>
+    <p>我曾經有過老公，淪落街頭也並非我所願，我已經六十歲了，他們到底在想什麼？之後也曾有男街友很熱情地幫助我，到處幫我尋物資，最後也還是一句：「要不要跟我去開房間？」
+    <br><br></p>
+    <div class="button-container">
+        <a href="javascript:history.back()" class="button">返回上頁</a></div>
+   </div>
+    <!-- 页脚 -->
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>

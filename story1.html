@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+    .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px; /* 將高度設置為固定值 */
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg-container {
+    max-width: 100%; /* 最大寬度為螢幕寬度 */
+}
+
+.horizontal-bg {
+    background-image: url('story/story1.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 500px 0; /* 調整上下間距 */
+}
+
+.horizontal-bg p{
+    line-height: 30px;
+}
+
+/* 文章內文樣式 */
+.article-content {
+    max-width: 800px; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 20px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* 圖片與文字之間的間距 */
+}
+
+.article-content h3{
+    font-weight: bold;
+    font-size: 15pt;
+    color: #333333;
+}
+.article-content p{
+    line-height: 40px;
+    color: #4b4b4b;
+}
+
+.article-content2 {
+    max-width: 100%; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 80px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+    background-color: #f1f1f1;
+}
+
+.article-content2 h4{
+    font-size: 15pt;
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.article-content2 p{
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    color: #333333;
+}
+
+.button-container {
+    text-align: center; /* 让按钮在容器内水平居中 */
+}
+
+.button {
+    border: none;
+    background-color: #9b2f699a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none; /* 消除链接的底线 */
+    font-size: 10pt;
+}
+
+.button:hover {
+    background-color: #9B2F68;
+}
+
+    @media only screen and (max-width: 1000px) {
+        .horizontal-bg-container {
+        width: 100%; /* 調整容器寬度 */
+    }
+    .horizontal-bg {
+        padding: 100px 0; /* 調整上下間距 */
+        height: auto; /* 讓高度自動調整 */
+    }
+
+    .horizontal-bg h2{
+        font-size: 12pt;
+    }
+
+    .article-content2 h4{
+    font-size: 12pt;
+    }
+
+.article-content2 p{
+font-size: 10pt;
+    }
+
+    .article-content h3{
+    font-size: 12pt;
+    }
+
+.article-content p{
+font-size: 10pt;
+    }
+}
+   
+</style>
+</head>
+<body>
+    <div class="right-side">
+        <div class="logo-container">
+            <img src="photo-home/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="menu">
+            <div class="menu-item"><a href="index.html">溫島緣起</a></div>
+            <div class="menu-item"><a href="story.html">島語季刊</a></div>
+            <div class="menu-item"><a href="about.html">島民介紹</a></div>
+            <div class="menu-item"><a href="they.html">溫的夥伴</a></div>
+        </div>
+    </div>
+
+  <!-- 横式底圖及置中文字 -->
+  <div class="horizontal-bg">
+    <h2>舶來品——我曾是一名女兒</h2>
+    <p>訪問對象：如嬌老闆娘<br>
+        經歷：新住民，18歲嫁來台，越南人，曾擔任仲介的翻譯
+        </p>
+</div> 
+
+
+<!-- 文章內文 -->
+<div class="article-content">
+    <h3><br><br>Q:當初為什麼選擇來到台灣?</h3>
+    <p>因為家中境況艱難，生意屢遭挫折，債務不斷累積，父親勸告我，十八歲前務必出嫁，希望能減輕家中負擔。他物色了不少當地的姻緣，但我心中不願照著安排走。看著姊姊們的婚姻狀況，大姊的老公雖好，卻為婆家感到困擾，而二姊也有類似的經歷。當時，現在的老公剛好來越南提親。於是，我決定以一千美元的費用嫁給現在的老公。雖然這筆錢大約只值三萬台幣，但對我們家來說已是十分不菲的數目，得花上十年時間才能湊成。為了不讓父母擔心，選擇了離家遠嫁，我也決定只報喜不報憂，減輕他們的壓力。
+    <br><br></p>
+    <h3>Q:大概都多久回家一次?</h3>
+    <p>來台灣已經七年多了我才第一次回越南。因為父親常說賺錢要省一點，還要養育孩子。這次回越南，我打算帶著孩子一起回去。我從來沒有寄錢回家，因為家人都知道我在外面有孩子要養，他們也不會過多要求。起初來到台灣時，由於語言不通，遭遇了許多困難和委屈。我只能比手畫腳跟老公溝通，以前，當他還在修車廠工作時，坐在一旁的我常常被客人用手勢指點著，他們說著些什麼笑著，但我卻聽不懂。這種感覺很無助和沮喪，但也讓我產生學好中文的念頭。
+    <br><br></p>
+    <h3>Q:當初是怎麼適應語言與文化差異呢?</h3>
+    <p>開始學中文時，我通過看卡通，像《多拉A夢》、《蠟筆小新》等。卡通講話語速比較慢，很適合初學者。隨著中文程度進步，客人卻開始改用台語跟我溝通，因為又聽不懂很氣憤，但為了克服困難，我更認真地看影片，轉向觀看台語節目，一字一句地對照下方的字幕，努力學習。
+        <br><br></p>
+    <img src="story/story1-1.JPG" alt="Image">
+    <h3>Q:有甚麼夢想或心願嗎?</h3>
+    <p>我沒有什麼夢想，也不敢去想，我的重心都在努力工作賺錢，為了讓小孩不要過上和我一樣的日子，希望他們書能讀的好。我其實沒有可以說話、訴苦的對象，都是憋在心裡靠時間慢慢去消化，以前總因為工作太忙無法消化這些情緒，就不小心發洩在小孩身上，經常對他們大吼大叫。有次我的小孩對我說，媽媽，我不想當你的小孩，我想當你的客人，因為你對待客人都好輕聲細語，對我們都在生氣。因為這件事才改變了我，改變我教育小孩的方式，改變自己的缺點，成為能跟小孩當朋友的媽媽。
+    <br><br></p>
+    <h3>Q:有曾因為國籍偏見，聽過或經歷過印象深刻的事嗎?</h3>
+    <p><strong>「我對於這些流言蜚語都不在乎，我愛我的父母、我的小孩，這就夠了。」</strong><br><br>
+
+        <strong>「妳們敢聽嗎?」</strong>在這個異國他鄉，除了語言的不適應外，我們因為國籍和身份，常常遭到許多台灣人看不起和輕視。這種酸言酸語讓人很心痛。甚至有客人聽到我先生娶外籍新娘只花費2、30萬後說：「這麼便宜，我也要買幾個來玩玩。」<br><br></p>
+</div>
+<div class="article-content2">
+    <h4>彷彿在他們眼裡她們不是人、是物，<br>是可以通過貿易來進行交易，可以透過金錢來役使。<br></h4>
+
+        <p>當時如嬌阿姨以一個稀鬆平常、朋友間說笑的態度，笑著講出那段駭人的話。<br>
+        在聽聞這段經歷時，我們單純欽佩她的堅毅、在面對這種無藥可救的人時，她還可以用一種充滿幽默的人生哲學和笑聲來面對。但我們似乎輕忽了，她在聽到這句話的當下，絕對笑不出來。在歷經無數次無可奈何後，她用了一個絕對不是傾訴、渴望得到安慰或解方的口吻；輾轉、翻面，將那些穢語搗碎，用她獨特的溫柔替我們過篩，讓我們不因過度的雜音而聽的太難受。那是一種純正的善意，彷彿視諸如己的關切，母親對孩子的愛。
+        <br></p>
+</div>
+<div class="article-content">
+    <p><br>抱有這種想法的絕對不是少數，後面也遇到了許多類似的情況。有一次我去新竹找朋友，在路邊被陌生人搭話，竟然問我要不要換老公。還有一次，鄰居對我說，給我1000塊，去陪他開一晚。甚至有一次，我先生的朋友居然說，他明明比我先生更帥，為甚麼當初不選他? 
+        還有人直接對我說，越南人是不是都是騙子。有一次在地瓜旺季，爸爸通知我他病危，要我回越南看他最後一面。沒想到，當我告訴客人我要公休的原因時，竟然有人回應說：<strong>「看什麼看？只要給他錢就會好了。」</strong>        
+    <br><br>
+    <img src="story/story1-2.JPG" alt="Image">
+</p>
+    <h3>Q:為什麼沒有繼續從事通譯的工作了呢？
+    </h3>
+    <p>之前曾做過仲介公司的通譯，但發生了一件事，從此我就決定再也不擔任翻譯了。<br><br>
+
+        有次半夜，我的雇主打電話來，說他家逃跑的看護抓到了。目前正在警察局做筆錄，需要我翻譯。當下雇主請我跟她說，只要她承認她有偷錢，只要她誠實交代，他們就不再追究。讓她好好回越南。她說她只有拿阿嬤的兩萬元，雇主卻說是八萬，因此他們兩方交談不攏，當下雙方說好，只要願意承認就不提告，就放她回家過年。結果兩個月後我收到消息，雇主告她，而她被判坐牢半年，這樣讓我兩方都不是人，我被雇主騙，而我也騙了對方。<br><br>
+        </p></div>
+
+<div class="article-content2">
+    <p>在闡述這段故事時，如嬌阿姨難得流露出了無奈，或許還有莫大的自責與愧疚，即使這些罪惡感從頭到尾都不該屬於她。即使她從頭到尾只是履行她身為翻譯的義務，遇到這樣的狀況，被借刀殺人，而自己也成了魚肉。
+        
+        <br><br><strong>身為越南人的她，被迫站到了台灣人雇主的一邊，背叛了同鄉。</strong>
+    <br><br><br></p>
+    <div class="button-container">
+        <a href="javascript:history.back()" class="button">返回上頁</a>
+    </div>
+</div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>

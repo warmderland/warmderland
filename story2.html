@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+    .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px; /* 將高度設置為固定值 */
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg-container {
+    max-width: 100%; /* 最大寬度為螢幕寬度 */
+}
+
+.horizontal-bg {
+    background-image: url('story/story2.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 500px 0; /* 調整上下間距 */
+}
+
+.horizontal-bg p{
+    line-height: 30px;
+}
+
+/* 文章內文樣式 */
+.article-content {
+    max-width: 800px; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 20px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* 圖片與文字之間的間距 */
+}
+
+.article-content h3{
+    font-weight: bold;
+    font-size: 15pt;
+    color: #333333;
+}
+.article-content p{
+    line-height: 40px;
+    color: #4b4b4b;
+}
+
+.article-content2 {
+    max-width: 100%; /* 文字框的最大寬度 */
+    margin: 0 auto; /* 水平置中 */
+    padding: 80px; /* 文字框的內邊距 */
+    text-align: left; /* 文字左對齊 */
+    background-color: #f1f1f1;
+}
+
+.article-content2 h4{
+    font-size: 15pt;
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.article-content2 p{
+    max-width: 800px;
+    margin: 0 auto; /* 水平置中 */
+    line-height: 40px;
+    color: #333333;
+}
+
+.button-container {
+    text-align: center; /* 让按钮在容器内水平居中 */
+}
+
+.button {
+    border: none;
+    background-color: #9b2f699a;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none; /* 消除链接的底线 */
+    font-size: 10pt;
+}
+
+.button:hover {
+    background-color: #9B2F68;
+}
+
+    @media only screen and (max-width: 1000px) {
+        .horizontal-bg-container {
+        width: 100%; /* 調整容器寬度 */
+    }
+    .horizontal-bg {
+        padding: 100px 0; /* 調整上下間距 */
+        height: auto; /* 讓高度自動調整 */
+    }
+
+    .horizontal-bg h2{
+        font-size: 12pt;
+    }
+
+    .article-content2 h4{
+    font-size: 12pt;
+    }
+
+.article-content2 p{
+font-size: 10pt;
+    }
+
+    .article-content h3{
+    font-size: 12pt;
+    }
+
+.article-content p{
+font-size: 10pt;
+    }
+}
+   
+</style>
+</head>
+<body>
+    <div class="right-side">
+        <div class="logo-container">
+            <img src="photo-home/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="menu">
+            <div class="menu-item"><a href="index.html">溫島緣起</a></div>
+            <div class="menu-item"><a href="story.html">島語季刊</a></div>
+            <div class="menu-item"><a href="about.html">島民介紹</a></div>
+            <div class="menu-item"><a href="they.html">溫的夥伴</a></div>
+        </div>
+    </div>
+
+  <!-- 横式底圖及置中文字 -->
+  <div class="horizontal-bg">
+    <h2>無以名狀</h2>
+    <p>訪問對象：阿梅/梅姐<br>
+        經歷：經歷：越南人，來台工作，女兒在台讀大學，目前就職看護
+        </p>
+</div> 
+
+
+<!-- 文章內文 -->
+<div class="article-content">
+    <h3><br><br>Q:會想念在越南的家人和小孩嗎?</h3>
+    <p>今天被你們訪問的同時，我也正在等待與女兒見面。我女兒在台灣的逢甲大學唸書，因為自己孩子留學需要龐大的經濟支撐，因此我為了孩子的未來與經濟開銷，也和女兒一起來台灣努力。我在越南還有老公跟一個高一的兒子，因為女兒在台灣讀書，但我休假很少，所以我跟她都一個月見一次，平常每天電話聯絡。我跟女兒平時處的環境有台灣人也有越南人，基本上兩種國籍都有機會互相交流到，她是大學生也是留學生嘛! 我則是跟台灣雇主、台灣人相處較多一點。
+    <br><br></p>
+    <h3>Q:有甚麼想要達到的目標或夢想嗎?</h3>
+    <p>說到我的目標和夢想，我們這個年齡層的越南人，父母大多經濟不足以支撐我們好好求學，所以小時候的我們早早就獨立，出外打拼賺錢，雖然當時心中還是渴望能透過學歷找到好工作，但像我現在就是因為沒有好學歷，一生只能靠勞力賺錢。
+    <br><br></p>
+    <h3>Q:在台灣生活這麼久了，有發現甚麼文化上特別的差異嗎?</h3>
+    <p>我認為的一個很特別的台人與越人差異是，我覺得台灣人對待父母比較冷漠，父母生病時比較少會親自帶父母看病，孩子生病時也有可能自己去看病。但如果是在越南，家人身體如果一有狀況，無論男女、家裡老小，全家都會特別緊張，而且會盡快尋求合適的資源去解決，我覺得這部分越南人比較溫暖。
+        <br><br></p>
+    <img src="story/story2-2.JPG" alt="Image"></div>
+
+<div class="article-content2">
+        <p>來自如嬌阿姨、梅姐身上為家庭奉獻、將孩子擺在人生第一順位的無私精神，都能看見她們對家庭價值的重視。
+        <br><br></p>
+    <div class="button-container">
+        <a href="javascript:history.back()" class="button">返回上頁</a>
+    </div>
+</div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>

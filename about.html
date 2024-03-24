@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warmderland</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        position: relative;
+        min-height: 100vh;
+    }
+    .container {
+        display: flex;
+        position: relative;
+    }
+    .right-side {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 65px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+    .logo-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(111, 110, 111, 0.527);
+    }
+    .menu-item {
+        width: 65px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        font-size: 14pt;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        border-bottom: 1px solid #FFFFFF;
+        padding: 5px 0;
+    }
+    .menu-item:last-child {
+        border-bottom: none;
+    }
+    .menu-item:hover {
+        background-color: #999999;
+    }
+
+    .footer {
+    position: sticky; /* 固定位置 */
+    bottom: 0; /* 距離底部的距離 */
+    width: 100%;
+    height: 40px; /* 將高度設置為固定值 */
+    background-color: #9c9c9c;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 8pt;
+    line-height: 40px;
+    border-top: 1px solid #999999;
+    z-index: 999; /* 確保 footer 在其他內容上方 */
+}
+
+    .menu-item a {
+        text-decoration: none; /* 消除底線 */
+        color: white; /* 設置顏色為白色 */
+    }
+
+    .horizontal-bg-container {
+    max-width: 100%; /* 最大寬度為螢幕寬度 */
+}
+
+.horizontal-bg {
+    background-image: url('photo-home/about.jpg');
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    padding: 500px 0; /* 調整上下間距 */
+}
+    .team-section {
+        text-align: center;
+        background-image: url('your-image-path.jpg');
+        background-size: cover;
+        padding: 40px 0;
+    }
+
+    .team-member {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 -50px;
+    }
+
+    .team-member-item {
+        width: 300px; /* 設置每個圖片的寬度為父元素的1/3減去間距，並考慮間距 */
+        margin-bottom: 50px; /* 設置圖片之間的下邊距 */
+        margin-right: 20px; /* 設置右邊距為20px */
+        margin-left: 20px; /* 設置左邊距為20px */
+    }
+
+    .team-member-item img {
+        width: 250px; /* 設置寬度為100% */
+        height: auto; /* 自動調整高度 */
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .text-box {
+        width: 40%;
+        background-color: #f0f0f0;
+        padding: 0px;
+        margin-bottom: 20px;
+        margin-top: 50px;
+    }
+
+    .text-box h3 {
+        color: #414141;
+    }
+
+    .inner-content {
+        text-align: center; /* 文字置中對齊 */
+        color: #4b4b4b; /* 文字顏色為灰色 */
+        line-height: 40px; /* 調整行高 */
+        font-size: 15px; /* 調整字體大小 */
+    }
+
+    .separator {
+    border-top: 1px solid #ccc; /* 添加灰色分隔線 */
+    margin-top: 20px; /* 分隔線與上方元素的間距 */
+    margin-bottom: 20px; /* 分隔線與下方元素的間距 */
+    }
+
+    .wrapper h3 {
+        color: #333333;
+    }
+
+    .team-section h4{
+        color:#4b4b4b;
+        line-height: 80px;
+        font-size: 15pt;
+        margin-bottom: 20px;
+    }
+
+    .team-member-item p{
+        color: #4b4b4b;
+    }
+
+    .team-member-item {
+    position: relative;
+}
+
+.team-member-item:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25.5px;
+    width: 83%;
+    height: 82%;
+    background-color: rgba(255, 173, 231, 0.5); /* 粉紅色透明框 */
+    z-index: 1; /* 確保在圖片上方 */
+    transition: background-color 5s ease; /* 調整過渡時間為0.3秒 */
+}
+
+.team-member-item:hover .overlay-text {
+    display: block;
+}
+
+.overlay-text {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 90px; /* 上方間距 */
+    text-align: center;
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 30px; 
+    color: white;
+    z-index: 2; /* 確保在粉紅色透明框上方 */
+    transition: opacity 5s ease; /* 調整過渡時間為0.3秒 */
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .horizontal-bg-container {
+        width: 100%; /* 調整容器寬度 */
+    }
+    .horizontal-bg {
+        padding: 100px 0; /* 調整上下間距 */
+        height: auto; /* 讓高度自動調整 */
+    }
+
+
+    .footer {
+        position: fixed; /* 將 footer 固定在底部 */
+        bottom: 0;
+    }
+
+    .text-box {
+        width: 80%; /* 調整文字方塊寬度 */
+    }
+
+    .inner-content {
+        font-size: 10pt; /* 調整文字大小 */
+    }
+
+    .team-member-item {
+        width: calc(33.33% - 40px); /* 調整每個成員項目的寬度 */
+    }
+
+    .team-member-item img {
+        width: 100%; /* 圖片寬度調整為100% */
+        font-size: 12pt
+    }
+
+    .team-member-item:hover::before {
+        display: none; /* 在手機大小時隱藏粉紅框 */
+    }
+
+    .overlay-text {
+    visibility: hidden;
+}
+.wrapper h3 {
+    font-size: 12pt
+    }
+
+    .team-section h4{
+        font-size: 12pt;
+        line-height: 40px; 
+    }
+    
+    .horizontal-bg h2{
+        font-size: 12pt;
+    }
+
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="right-side">
+            <div class="logo-container">
+                <img src="photo-home/logo.png" alt="Logo" class="logo">
+            </div>
+            <div class="menu">
+                <div class="menu-item"><a href="index.html">溫島緣起</a></div>
+                <div class="menu-item"><a href="story.html">島語季刊</a></div>
+                <div class="menu-item"><a href="about.html">島民介紹</a></div>
+                <div class="menu-item"><a href="they.html">溫的夥伴</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 横式底圖及置中文字 -->
+    <div class="horizontal-bg">
+        <h2>島民介紹 About us</h2>
+    </div>
+
+    <!-- 團隊理念介绍 -->
+    <div class="team-section">
+        <h4>「溫島」是一個紀錄台灣生活中各種溫暖細節的季刊，
+            今年度 2024 已發行到 No.2 「她」，為台灣這塊土地上的「弱勢女性族群」發聲。<br>
+        </h4>
+        <div class="wrapper">
+              
+            <div class="text-box">
+                <h3>主題與挑戰</h3>
+            </div>
+            <div class="inner-content">
+                <p> 沒日沒夜在電腦前爆肝的設計系學生，<br>
+                    嘗試跳脫緊盯螢幕的工作習慣。<br>
+                    實際走入社會角落，學著透過傾聽來真正理解一個人。<br><br>
+                    挖掘出咱台灣上ㄟ每個小小溫暖故事。 —— 溫島。<br><br></p>
+            </div>
+            <div class="text-box">
+                <h3>問題的本質</h3>
+            </div>
+            <div class="inner-content">
+                <p> 歧見，往往源自於對他人的表層理解。<br>
+                    為了替弱勢族群們發聲，我們竭盡目前所學。<br>
+                    除了視覺設計，我們還充當了文字創作者、採訪人以及出版編輯的角色。<br>
+                    訪談交流的中的所學所見，都悄悄地讓溫島的組成更緊密。<br>
+                    原來不預設立場的幫助他人如此困難。<br><br></p>
+
+                    <span class="italic-text">你永遠也不可能真正了解一個人，
+                        除非你穿上他的鞋子走來走去，站在他的角度考慮問題。<br>
+                    —《殺死一隻知更鳥》<br><br></span>
+            </div>
+            <div class="text-box">
+                <h3>目標與使命</h3>
+            </div>
+            <div class="inner-content">
+                <p>「溫島 Warmderland」期望透過理解促使相互尊重，減少歧見的產生。<br>
+                    協致力於響應聯合國SDGs可持續發展目標的條款10.2以及10.3，強調包容心。<br><br>
+                    讓我們負責實際走到現場，將當下的感動與瞬間，收錄至年度期刊，<br>
+                    傳遞福爾摩沙那些不為人知的，美麗溫度。<br><br></p>
+            </div>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div class="team-section">
+        <div class="wrapper">
+            <h3>島 Team member 民</h3>
+        </div>
+        <!-- 第一列 -->
+        <div class="team-member">
+            <div class="team-member-item">
+                <img src="photo-home/m1.jpg" alt="Team Member 1">
+                <div class="overlay-text">我是沒用的人！</div>
+                <p>王丹卉｜Strategic planning</p>
+            </div>
+            <div class="team-member-item">
+                <img src="photo-home/m4.jpg" alt="Team Member 2">
+                <div class="overlay-text">原來我是學生<br>不是畜生啊</div>
+                <p>黃采寧｜Graphic design</p>
+            </div>
+            <div class="team-member-item">
+                <img src="photo-home/m2.jpg" alt="Team Member 3">
+                <div class="overlay-text">任何困難都可以克服我</div>
+                <p>江敏｜Image editing</p>
+            </div>
+        </div>
+
+        <!-- 第二列 -->
+        <div class="team-member">
+            <div class="team-member-item">
+                <img src="photo-home/m5.jpg" alt="Team Member 4">
+                <div class="overlay-text">我們總懷念過去，<br>
+                卻忘了每個當下<br>
+            都有最好的模樣。</div>
+                <p>張筠茹｜Editorial work</p>
+            </div>
+            <div class="team-member-item">
+                <img src="photo-home/m6.jpg" alt="Team Member 5">
+                <div class="overlay-text">明明想繫上卻不經意解開<br>
+                明明想鬆開卻不經意綁上<br>
+            —Aimer「蝶々結び」</div>
+                <p>林家瑄｜Text</p>
+            </div>
+            <div class="team-member-item">
+                <img src="photo-home/m3.jpg" alt="Team Member 6">
+                <div class="overlay-text">某一波</div>
+                <p>張庭溦｜Photography </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 朝陽科技大學｜視覺傳達設計系｜畢業專題製作｜溫島 Warmderland
+    </div>
+</body>
+</html>
